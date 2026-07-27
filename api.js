@@ -2,11 +2,11 @@ import fs from "node:fs/promises"
 
 async function cambio() {
     
-const apiawesomeapi = await fetch("https://api.exchangerate.fun/latest?base=USD")
-const dadosawesomeapi = await apiawesomeapi.json()
+const pesquisaapi = await fetch("https://api.exchangerate.fun/latest?base=USD")
+const dados = await pesquisaapi.json()
 
-await fs.writeFile("cotacao.json", JSON.stringify(dadosawesomeapi))
-console.log(dadosawesomeapi)
+await fs.writeFile("cotacao.json", JSON.stringify(dados))
+console.log(dados)
 
 }
 
